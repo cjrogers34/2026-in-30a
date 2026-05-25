@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 in 30A | Rogers Family Vacation</title>
+  <style>
+    :root {
+      --navy: #06244a;
+      --deep-navy: #031933;
+      --teal: #009ca6;
+      --aqua: #27c4d6;
+      --sunset: #ff6b3d;
+      --orange: #ff9f2e;
+      --sand: #f7dfb4;
+      --cream: #fff7e8;
+      --white: #ffffff;
+      --text: #17324d;
+      --muted: #6c7a89;
+      --shadow: 0 18px 45px rgba(6, 36, 74, 0.18);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255,159,46,0.20), transparent 35%),
+        linear-gradient(180deg, #fff8ed 0%, #eefcff 42%, #fff7e8 100%);
+      line-height: 1.55;
+    }
+
+    header {
+      position: relative;
+      min-height: 620px;
+      overflow: hidden;
+      color: white;
+      background:
+        linear-gradient(rgba(3,25,51,0.28), rgba(3,25,51,0.68)),
+        url('watercolor-beach-club.jpg') center/cover no-repeat;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 120px;
+      background: linear-gradient(180deg, transparent, #fff8ed 80%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 38px 18px 120px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 30px;
+      align-items: center;
+      min-height: 620px;
+    }
+
+    .logo-card {
+      background: rgba(255,255,255,0.92);
+      border-radius: 30px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      border: 5px solid rgba(255,255,255,0.65);
+      transform: rotate(-1deg);
+    }
+
+    .logo-card img {
+      width: 100%;
+      display: block;
+      border-radius: 22px;
+    }
+
+    .hero-copy {
+      text-shadow: 0 4px 18px rgba(0,0,0,0.32);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: .78rem;
+      font-weight: 800;
+      background: rgba(255,107,61,.92);
+      padding: 8px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 8vw, 6.4rem);
+      line-height: .9;
+      letter-spacing: -0.06em;
+    }
+
+    .hero-copy p {
+      max-width: 580px;
+      margin: 20px 0 0;
+      font-size: 1.18rem;
+      font-weight: 700;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      box-shadow: 0 10px 24px rgba(3,25,51,.18);
+    }
+
+    .button.primary { background: var(--sunset); color: white; }
+    .button.secondary { background: white; color: var(--navy); }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(6,36,74,.10);
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    nav .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+      padding: 12px 16px;
+    }
+
+    nav a {
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: #e8fbff;
+      border: 1px solid rgba(0,156,166,.12);
+      font-size: .92rem;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: -44px auto 0;
+      padding: 0 18px 70px;
+      position: relative;
+      z-index: 3;
+    }
+
+    section { margin: 30px 0; }
+
+    .top-grid,
+    .grid-three {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: rgba(255,255,255,.96);
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(6,36,74,.08);
+    }
+
+    .card.accent {
+      background: linear-gradient(135deg, var(--navy), #004d73);
+      color: white;
+    }
+
+    .card.sunset {
+      background: linear-gradient(135deg, var(--sunset), var(--orange));
+      color: white;
+    }
+
+    .card h2,
+    .card h3 { margin: 0 0 10px; }
+    .card h2 { font-size: 1.55rem; }
+    .card h3 { color: var(--navy); font-size: 1.15rem; }
+    .card.accent h3, .card.sunset h3 { color: white; }
+    .card p { margin: 8px 0; }
+    .muted { color: var(--muted); }
+    .card.accent .muted, .card.sunset .muted { color: rgba(255,255,255,.82); }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin: 38px 0 14px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      letter-spacing: -0.04em;
+    }
+
+    .section-title span {
+      color: var(--sunset);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .78rem;
+    }
+
+    .day {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 14px;
+    }
+
+    .day-date {
+      background: #e8fbff;
+      color: var(--teal);
+      border-radius: 18px;
+      padding: 14px;
+      font-weight: 900;
+      text-align: center;
+      border: 1px solid rgba(0,156,166,.18);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #e8fbff;
+      color: var(--navy);
+      font-weight: 800;
+      font-size: .82rem;
+    }
+
+    .photo-strip {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 12px;
+    }
+
+    .photo-strip div {
+      min-height: 180px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #00a9b7, #ff9f2e);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .photo-strip div::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      background: rgba(3,25,51,.78);
+      color: white;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: .82rem;
+      font-weight: 900;
+    }
+
+    .quick-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .quick-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(6,36,74,.10);
+    }
+    .quick-list li:last-child { border-bottom: 0; }
+
+    footer {
+      text-align: center;
+      padding: 30px 18px;
+      background: var(--deep-navy);
+      color: rgba(255,255,255,.76);
+    }
+
+    @media (max-width: 860px) {
+      header, .hero-inner { min-height: auto; }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 34px 18px 110px;
+      }
+      .logo-card { transform: none; }
+      .top-grid,
+      .grid-three,
+      .grid-two,
+      .photo-strip { grid-template-columns: 1fr; }
+      .day { grid-template-columns: 1fr; }
+      main { margin-top: -52px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero-inner">
+      <div class="logo-card">
+        <img src="2026-in-30a-logo.png" alt="2026 in 30A Rogers Family Vacation logo" />
+      </div>
+      <div class="hero-copy">
+        <div class="eyebrow">Rogers Family Vacation</div>
+        <h1>2026<br>in 30A</h1>
+        <p>WaterColor days, beach club afternoons, Seaside nights, and just enough planning to keep Dad from answering the same question 47 times.</p>
+        <div class="hero-buttons">
+          <a class="button primary" href="#itinerary">View the Plan</a>
+          <a class="button secondary" href="#quick">Quick Details</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#quick">Quick Details</a>
+      <a href="#beachhaven">Beach Haven</a>
+      <a href="#travel">Flights</a>
+      <a href="#itinerary">Itinerary</a>
+      <a href="#eats">Eats</a>
+      <a href="#activities">Things To Do</a>
+      <a href="#packing">Packing</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="quick" class="top-grid">
+      <div class="card accent">
+        <h3>Trip Dates</h3>
+        <p><strong>Monday, July 20 – Friday, July 24, 2026</strong></p>
+        <p class="muted">Four nights in WaterColor / 30A.</p>
+      </div>
+      <div class="card sunset">
+        <h3>Home Base</h3>
+        <p><strong>Beach Haven</strong></p>
+        <p class="muted">604 Western Lake Drive, Santa Rosa Beach, FL 32459</p>
+      </div>
+      <div class="card">
+        <h3>Trip Motto</h3>
+        <p><strong>Pool. Beach. Repeat.</strong></p>
+        <p class="muted">With seafood, ice cream, and a little Rogers family chaos mixed in.</p>
+      </div>
+    </section>
+
+    <section id="beachhaven">
+      <div class="section-title">
+        <div><span>Home Base</span><h2>Beach Haven</h2></div>
+      </div>
+      <div class="grid-two">
+        <div class="card">
+          <h3>WaterColor “Beach Haven”</h3>
+          <p><strong>Address:</strong> 604 Western Lake Drive, Santa Rosa Beach, FL 32459</p>
+          <p><strong>Check-in:</strong> Monday, July 20 after 4:00 PM</p>
+          <p><strong>Check-out:</strong> Friday, July 24 by 10:00 AM</p>
+          <p><strong>Property:</strong> 4 bedrooms, 4 bathrooms, max occupancy 10.</p>
+          <div class="pill-row">
+            <span class="pill">WaterColor</span>
+            <span class="pill">Beach Club</span>
+            <span class="pill">Pool + Beach</span>
+            <span class="pill">Family HQ</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Visual Theme</h3>
+          <p>This page uses the same logo style: bold navy, turquoise water, sunset orange, white sand, palm silhouettes, beach fence, resort pool, and coastal clubhouse elements.</p>
+          <p class="muted">Perfect for the logo, header, section cards, and mobile buttons.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="photo-strip">
+        <div data-label="WaterColor Beach Club"></div>
+        <div data-label="Pool Days"></div>
+        <div data-label="Beach Nights"></div>
+      </div>
+    </section>
+
+    <section id="travel">
+      <div class="section-title">
+        <div><span>Flights</span><h2>Travel Details</h2></div>
+      </div>
+      <div class="grid-two">
+        <div class="card">
+          <h3>Outbound Flight</h3>
+          <p><strong>Monday, July 20, 2026</strong></p>
+          <p>DFW → ECP</p>
+          <p><strong>9:40 AM – 11:54 AM</strong></p>
+          <p class="muted">AA 5185 · Nonstop · Seats: 10A, 11A, 10C, 11C</p>
+        </div>
+        <div class="card">
+          <h3>Return Flight</h3>
+          <p><strong>Friday, July 24, 2026</strong></p>
+          <p>ECP → DFW</p>
+          <p><strong>3:12 PM – 5:27 PM</strong></p>
+          <p class="muted">AA 5063 · Nonstop · Seats: 12C, 12D, 12A, 12F</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="itinerary">
+      <div class="section-title">
+        <div><span>Daily Plan</span><h2>Itinerary</h2></div>
+      </div>
+      <div class="card day">
+        <div class="day-date">Mon<br>Jul 20</div>
+        <div>
+          <h3>Arrival + Settle In</h3>
+          <p><strong>Morning:</strong> Fly DFW to ECP.</p>
+          <p><strong>Afternoon:</strong> Grab lunch, grocery run, check in after 4 PM.</p>
+          <p><strong>Evening:</strong> Easy dinner, beach walk, and first-night reset.</p>
+        </div>
+      </div>
+      <div class="card day">
+        <div class="day-date">Tue<br>Jul 21</div>
+        <div>
+          <h3>Beach Club Day</h3>
+          <p><strong>Main plan:</strong> Pool + beach day at WaterColor Beach Club.</p>
+          <p><strong>Evening:</strong> Seaside dinner / dessert / shops.</p>
+        </div>
+      </div>
+      <div class="card day">
+        <div class="day-date">Wed<br>Jul 22</div>
+        <div>
+          <h3>Adventure / Activity Day</h3>
+          <p><strong>Main plan:</strong> Pick a bigger activity — bikes, boat, fishing, PCB, or something memorable.</p>
+          <p><strong>Backup:</strong> Pool, shopping, arcade, movie, or rainy-day food crawl.</p>
+        </div>
+      </div>
+      <div class="card day">
+        <div class="day-date">Thu<br>Jul 23</div>
+        <div>
+          <h3>Best Day, No Pressure</h3>
+          <p><strong>Main plan:</strong> Let the family vote: beach, pool, brunch, shopping, or one last adventure.</p>
+          <p><strong>Evening:</strong> Final-night dinner and family photo attempt before everyone melts.</p>
+        </div>
+      </div>
+      <div class="card day">
+        <div class="day-date">Fri<br>Jul 24</div>
+        <div>
+          <h3>Pack + Fly Home</h3>
+          <p><strong>Morning:</strong> Check out by 10 AM.</p>
+          <p><strong>Afternoon:</strong> ECP to DFW, 3:12 PM – 5:27 PM.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="eats">
+      <div class="section-title">
+        <div><span>Food</span><h2>Best Eats</h2></div>
+      </div>
+      <div class="grid-three">
+        <div class="card"><h3>Breakfast</h3><p>Donuts, coffee, brunch spots, and easy house breakfast ideas.</p></div>
+        <div class="card"><h3>Lunch</h3><p>Beach Club food, casual tacos, burgers, seafood, and quick bites.</p></div>
+        <div class="card"><h3>Dinner + Dessert</h3><p>Seaside, WaterColor, 30A classics, ice cream, and final-night dinner.</p></div>
+      </div>
+    </section>
+
+    <section id="activities">
+      <div class="section-title">
+        <div><span>Explore</span><h2>Things To Do</h2></div>
+      </div>
+      <div class="grid-three">
+        <div class="card"><h3>WaterColor / Seaside</h3><p>Bikes, shops, food trucks, beach access, and picture spots.</p></div>
+        <div class="card"><h3>PCB / Big Activity</h3><p>Boat day, fishing, dolphins, mini golf, arcade, or other teen-friendly options.</p></div>
+        <div class="card"><h3>Rainy Day</h3><p>Restaurants, shopping, bowling/arcade, movie, escape room, or dessert crawl.</p></div>
+      </div>
+    </section>
+
+    <section id="packing">
+      <div class="section-title">
+        <div><span>Checklist</span><h2>Packing List</h2></div>
+      </div>
+      <div class="grid-three">
+        <div class="card"><h3>Beach</h3><p>Sunscreen, hats, sunglasses, swimsuits, coverups, sandals, beach bag.</p></div>
+        <div class="card"><h3>House</h3><p>Chargers, cards/games, snacks, coffee, groceries, medicine, toiletries.</p></div>
+        <div class="card"><h3>Going Out</h3><p>Dinner outfits, comfortable shoes, light jacket, IDs, confirmations.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    2026 in 30A · Rogers Family Vacation · July 20–24, 2026
+  </footer>
+</body>
+</html>
